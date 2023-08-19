@@ -7,7 +7,7 @@ const Article = (props) => {
   return (
     <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       <article className="overflow-hidden rounded-lg shadow-lg">
-        <Link href={`/news/newsinfo/${props.title}`}>
+        <Link href={{ pathname: `/news/newsinfo`, query: props }}>
           <img
             alt="Placeholder"
             className="block h-auto w-full"
@@ -19,7 +19,7 @@ const Article = (props) => {
           <h1 className="text-lg">
             <Link
               className="no-underline hover:underline text-black"
-              href={`/news/newsinfo/${props.title}`}
+              href={{ pathname: `/news/newsinfo`, query: props }}
             >
               {props.title}
             </Link>

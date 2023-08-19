@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+
+"use client";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -7,17 +9,8 @@ import { connect } from "react-redux";
 const Page = (props) => {
   const router = useRouter();
 
-  const articleName = router.query.index;
-  console.log(articleName);
-  console.log(props);
-  const news = props.news.filter((i) => {
-    console.log(i.title);
-    return i.title === articleName;
-  })[0];
-  console.log(news);
-  if (news === undefined) {
-    router.push("/news");
-  }
+  const news = router.query;
+  console.log(router.query);
   return (
     <>
       <Head>
@@ -49,7 +42,7 @@ const Page = (props) => {
                 <dt className="font-medium text-gray-900">URL</dt>
                 <Link
                   target="_blank"
-                  href={news.url}
+                  href={news.url ? news.url : " "}
                   className="mt-2 text-sm text-gray-500"
                 >
                   Read More

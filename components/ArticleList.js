@@ -13,7 +13,7 @@ const ArticleList = (props) => {
           data-te-ripple-color="light"
         >
           <img src={props.img} className="w-full" alt="Louvre" />
-          <Link href={`/news/newsinfo/${props.title}`}>
+          <Link href={{ pathname: `/news/newsinfo`, query: props }}>
             <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"></div>
           </Link>
         </div>
@@ -52,7 +52,7 @@ const ArticleList = (props) => {
           </small>
         </p>
         <Link
-          href={`/news/newsinfo/${props.title}`}
+          href={{ pathname: `/news/newsinfo`, query: props }}
           style={{ color: "black" }}
           className="text-neutral-500 dark:text-neutral-300"
         >
