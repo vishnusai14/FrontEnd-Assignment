@@ -59,7 +59,7 @@ const News = (props) => {
     setLoading(true);
     let url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&apiKey=6e731371b6f54fd480240031907b517e`;
     axios
-      .get(url)
+      .get(url, { withCredentials: false })
       .then((data) => {
         let news = [];
         console.log(data.data);
